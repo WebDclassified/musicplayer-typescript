@@ -1,0 +1,258 @@
+/* FileName: player.scss */
+.player {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.time-control {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.time-control input {
+  width: 100%;
+  cursor: pointer;
+}
+.time-control p {
+  padding: 0.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.play-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  width: 20%;
+  border-radius: 50px;
+}
+.play-control svg {
+  cursor: pointer;
+  background-color: rgb(67, 199, 255);
+  padding: 1rem;
+  border-radius: 100px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 16px;
+  width: 16px;
+  
+}
+
+.track {
+  width: 100%;
+  height: 1rem;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  
+}
+
+
+.animate-track {
+  background: #d7edef;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 90%;
+  }
+  .play-control {
+    width: 80%;
+  }
+}
+
+
+
+
+/* FileName: app.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy", sans-serif;
+}
+
+body {
+  background: rgb(3, 126, 148);
+  background: linear-gradient(180deg, rgb(145, 238, 255) 0%, rgb(14, 72, 101) 100%);
+}
+
+/* FileName: library.scss */
+.library {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  background: #047db1;
+  box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.205);
+  overflow: scroll;
+  transform: translateX(-100%);
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+.library h2 {
+  padding: 1.5rem;
+  font-size: large;
+}
+
+.library-song {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 2rem;
+}
+.library-song img {
+  width: 20%;
+}
+.library-song:hover {
+  background: rgb(0, 73, 109);
+}
+
+.song-description {
+  padding-left: 1rem;
+}
+.song-description h3 {
+  color: #f3f3f3;
+  font-size: 1rem;
+}
+.song-description h4 {
+  color: rgba(234, 234, 234, 0.702);
+  font-size: 0.7rem;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 183, 255);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(0, 183, 255);
+}
+
+.selected {
+  background: rgb(0, 183, 255);
+}
+.selected h3 {
+  color: #ffffff;
+}
+
+.active {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
+}
+
+/* FileName: song.scss */
+.song-container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.song-container img {
+  width: 20%;
+}
+.song-container h2 {
+  padding: 3rem 1rem 1rem 1rem;
+}
+.song-container h3 {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .song-container img {
+    width: 60%;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rotateSong {
+  animation: rotate 20s linear forwards infinite;
+}
+
+/*FileName: nav.scss */
+h1{
+  color: #dff3f8;
+  font-size: 40px;
+
+}
+h4 {
+  color: rgb(255, 255, 255);
+}
+
+nav {
+  min-height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4%;
+}
+nav button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 20%;
+  border-radius: 12px;
+  background-color: #047db1;
+  padding: 0.7rem;
+  transition: all 0.3s ease;
+}
+nav button:hover {
+  background: rgba(34, 181, 255, 0.783);
+  color: rgb(9, 181, 255);
+}
+
+@media screen and (max-width: 768px) {
+  nav button {
+    z-index: 10;
+  }
+}
+h2,
+h3 {
+  color: #ffffff;
+}
+
+h3,
+h4 {
+  font-weight: 600;
+}
+
+button {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=App.css.map */
